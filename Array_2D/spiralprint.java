@@ -6,13 +6,13 @@ public class spiralprint {
 
         int startrow = 0;
         int startcol = 0;
-        int endrow = matrix.length;
+        int endrow = matrix.length -1;
         int endcol = matrix[0].length - 1;
 
         while (startrow <= endrow && startcol <= endcol) {
 
             //top
-            for (int j = startcol; j<=endcol; j++){
+            for (int j = startcol; j<=endcol -1; j++){
                 System.out.print(matrix[startrow][j]);
             }
             
