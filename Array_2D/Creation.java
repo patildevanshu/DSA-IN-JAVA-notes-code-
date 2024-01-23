@@ -46,19 +46,48 @@ public class Creation{
         }
         
     }
+    public static boolean staircasesearch(int matric[][], int key) {
+
+        int row = 0 , col = matric[0].length -1;
+        
+        while (row<matric.length && col>= 0) {
+            if (matric[row][col] == key){
+                System.out.println("found key at (" + row + "," + col + ")");
+                return true;
+            }
+            else if (key < matric[row][col]){
+                col--;
+            }
+            else {
+                row++;
+            }
+            
+        }
+        System.out.println("key not found");
+        return false;
+    }
     
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter no. of rows you want");
-        int n = sc.nextInt();
-        System.out.println("Enter of columns You want");
-        int m = sc.nextInt();
-        int matric[][] = new int[n][m];
+        // Scanner sc = new Scanner(System.in);
+        // System.out.println("Enter no. of rows you want");
+        // int n = sc.nextInt();
+        // System.out.println("Enter of columns You want");
+        // int m = sc.nextInt();
+        // int matric[][] = new int[n][m];
 
-        System.out.println("Enter key you want to search");
-        int key = sc.nextInt();
-        input(matric);
-        print(matric);
-        search(matric, key);
+        // System.out.println("Enter key you want to search");
+        // int key = sc.nextInt();
+        // input(matric);
+        // print(matric);
+        // search(matric, key);
+
+        int matric[][]= {{1,2,3,4},
+                        {5,6,7,8},
+                        {9,10,11,12},
+                        {13,14,15,16}};
+        int key = 13;
+
+        staircasesearch(matric, key);
+
     }
 }
