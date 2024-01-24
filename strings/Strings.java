@@ -37,6 +37,7 @@ public class Strings {
     }
     public static String substring(String str , int si , int ei){
         // String name = new String(str.substring(si, ei));
+        // git
         String substr = "";
         for (int i = si; i<ei; i++){
             substr+=str.charAt(i);
