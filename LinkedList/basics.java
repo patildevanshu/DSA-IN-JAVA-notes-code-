@@ -1,7 +1,5 @@
 package LinkedList;
 
-import CONDSTATE.incometax;
-
 public class basics {
 
     public static class Node {
@@ -238,6 +236,155 @@ public class basics {
         return true;
     }
 
+    public boolean isCycle(){
+        Node slow = head;
+        Node fast = head;
+
+        while (fast.next != null && fast != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if(fast == slow){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void removeCycle(){
+        // detect cycle\
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+
+        while (fast.next != null && fast != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if(fast == slow){
+                cycle = true;
+                break;
+            }
+        }
+        
+        if (cycle == false){
+            return;
+        }
+
+        // find meet point
+        slow = head;
+        Node prev = null;
+        while (slow != fast) {
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+        // remove cycle -> last.next = null
+
+        prev.next = null;
+    }
+    private Node getmid(Node head){
+        Node slow = head;
+        Node fast = head.next;
+
+        while(fast != null && fast.next != null ){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    private Node merge(Node head1 , Node head2){
+        Node mergedLL = new Node(-1);
+        Node temp = mergedLL;
+
+        while (head1 != null && head2 != null) {
+            if(head1.data <= head2.data){
+                temp.next = head1;
+                head1 = head1.next;
+                temp = temp.next;
+
+            }
+            else{
+                temp.next = head2;
+                head2 = head2.next;
+                temp = temp.next;
+            }
+        }
+
+        while (head1 != null) {
+            temp.next = head1;
+            head1 = head1.next;
+            temp = temp.next;
+        }
+
+        while (head2 != null) {
+            temp.next = head2;
+            head2 = head2.next;
+            temp = temp.next;
+        }
+
+        return mergedLL.next;
+    }
+
+    // merge sort O(n log n)
+    public Node mergeSort(Node head){
+        // base case
+        if(head == null || head.next == null){
+            return head;
+        }
+        // find mid
+        Node mid = getmid(head);
+
+        // left & right  call mergesort
+        Node rightHead = mid.next;
+        mid.next = null;
+        Node newLeft = mergeSort(head);
+        Node newright = mergeSort(rightHead);
+
+        // merge
+        return merge(newLeft , newright);
+    }
+
+    public void zigZag(){
+        // find mid 
+        Node slow =head;
+        Node fast = head.next;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+        }
+        Node mid = slow;
+
+        // reverse 2nd half
+        Node curr = mid.next;
+        mid.next = null;
+        Node prev = null;
+        Node next;
+
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        Node left = head;
+        Node right = prev;
+        Node nextL , nextR ;
+
+        // alt merge - zigzag merge
+        while (left != null & right != null) {
+            nextL = left.next;
+            left.next = right;
+            nextR = right.next;
+            right.next = nextL;
+
+            left = nextL;
+            right = nextR;
+        }
+
+    }
 
 
     public static void main(String[] args) {
@@ -253,22 +400,28 @@ public class basics {
         ll.print();
         ll.add(2, 9);
         ll.print();
-        System.out.println(ll.size);
+        // System.out.println(ll.size);
 
         // ll.removeFirst();
         // ll.removeLast();
         
-        System.out.println(ll.search(4));
-        System.out.println(ll.searchRec(9));
-        ll.print();
-        ll.reverse();
-        ll.print();
-        ll.deleteNthfromEnd(3);
-        ll.print();
-        System.out.println(ll.checkPalindrome());
-        ll.print();
+        // System.out.println(ll.search(4));
+        // System.out.println(ll.searchRec(9));
+        // ll.print();
+        // ll.reverse();
+        // ll.print();
+        // ll.deleteNthfromEnd(3);
+        // ll.print();
+        // System.out.println(ll.checkPalindrome());
+        // ll.print();
 
+        // System.out.println(ll.isCycle());
 
+        ll.head = ll.mergeSort(ll.head);
+        ll.print();
+        ll.zigZag();
+        ll.print();
+        
 
     }
 }
