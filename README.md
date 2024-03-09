@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/patildevanshu/DSA-IN-JAVA-notes-code-/output/snake.svg" alt="Snake animation" />
+<img src="https://github.com/patildevanshu/DSA-IN-JAVA-notes-code-/blob/main/output/snake.ylm" alt="Snake animation" />
 
 ###
 
