@@ -287,6 +287,53 @@ public class functons {
         return root;
         
     }
+    /*------------------------------------------------- */
+
+    public static int kAncestor(Node root , int n , int k){
+        if (root == null) {
+            return -1;
+        }
+        if (root.data == n) {
+            return 0;
+        }
+
+        int leftdist = kAncestor(root.left, n, k);
+        int rightdist = kAncestor(root.right, n, k);
+
+        if (leftdist == -1 && rightdist == -1) {
+            return -1;
+        }
+
+        int max = Math.max(leftdist, rightdist);
+        if(max+1 == k){
+            System.out.println(root.data);
+        }
+        return max+1;
+    }
+    /*--------------------------------------------------- */;
+
+    public static int transform(Node root){
+        if (root == null) {
+            return 0;
+        }
+        int leftChild = transform(root.left);
+        int rightChild = transform(root.right);
+
+        int data = root.data;
+        int newLeft = root.left == null ? 0 : root.left.data;
+        int newRight = root.right == null ? 0 : root.right.data;
+        root.data =  newLeft + leftChild + newRight + rightChild;
+        return data;
+    }
+    public static void preorder(Node root) { // O(n)
+        if (root == null) {
+            // System.out.print(-1 + " ");
+            return;
+        }
+        System.out.print(root.data + " ");
+        preorder(root.left);
+        preorder(root.right);
+    }
 
     public static void main(String[] args) {
 
@@ -334,6 +381,12 @@ public class functons {
         // Klevel(root, 1, 3);
 
         // System.out.println(lca2(root, 04, 7).data);;
-        System.err.println(minDist(root, 4, 7));
+        // System.err.println(minDist(root, 4, 7));
+        // System.out.println(kAncestor(root, 5, 1 ));
+        preorder(root);
+        System.out.println();
+        transform(root);
+        preorder(root);
+
     }
 }
