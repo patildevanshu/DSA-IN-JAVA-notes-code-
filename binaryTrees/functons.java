@@ -354,6 +354,7 @@ public class functons {
         root.left.right = new Node(5);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
+        root.right.right.left = new Node(8);
 
         /*
          * subroot
