@@ -35,6 +35,7 @@ public class arrays {
         // }
         // int index = linearsearch(numbers, key);
         // System.out.println(index);
+           // syso
 
         int largest = getlargest(number);
         System.out.println(largest);
