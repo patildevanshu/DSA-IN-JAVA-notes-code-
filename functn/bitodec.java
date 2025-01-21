@@ -2,7 +2,7 @@ package functn;
 
 public class bitodec {
     public static int btd(int n){
-        int mynum = n;
+        // int mynum = n;
         int pow = 0;
         int decimalno = 0;
 

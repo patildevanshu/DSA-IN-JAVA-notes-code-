@@ -14,6 +14,17 @@ public class Strings {
             }
         }return true;
     }
+    public static boolean isPalindrome(String s) {
+        String S = s.toLowerCase().replaceAll("[^a-z0-9]", "");
+        System.out.println(S);
+        int n = S.length();
+        for(int i=0; i<n/2 ; i++){
+            if(S.charAt(i)!=S.charAt(n-1-i)){
+                return false;
+            }
+        }
+        return true;
+    }
 
     public static float getshortestpath( String path ){
         int x = 0 , y = 0;
@@ -116,19 +127,20 @@ public class Strings {
     }
     
     public static void main(String[] args) {
-         String name = "devanshu";
-         String str1 = "uhsnaved";
+        //  String name = "devanshu";
+        //  String str1 = "uhsnaved";
         // System.out.println(name);
         // System.out.println(ispalindrome(name));
         // String dirc = "nsew";
         // System.out.println(getshortestpath(dirc));
         // String str = "Devanshu patil";
         // System.out.println(substring(str, 0, 10));
-        // String str2 = "hii, i am devanshu patil";
+        String str2 = "hii, i am devanshu patil";
         // System.out.println(toUppercase(str2));
 
-        System.out.println(countlowercasevowels(name));
-        anagrams(name, str1);
+        // System.out.println(countlowercasevowels(name));
+        // anagrams(name, str1);
+        System.out.println(isPalindrome(str2));
 
 
 

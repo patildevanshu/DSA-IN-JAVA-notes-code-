@@ -20,7 +20,7 @@ public class dectobi {
     }
 
     public static void main(String args[]){
-        db(4);
+        db(56);
     }
     
 }

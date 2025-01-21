@@ -1,5 +1,4 @@
 package arrays;
-
 public class reversearray {
 
     public static void reversearrays( int array[]){
@@ -23,9 +22,11 @@ public class reversearray {
 
         reversearrays(array);
         
-        for(int i=0; i<array.length ;i++ ){
-            System.out.print(array[i] + " ");
-        }
+        // for(int i=0; i<array.length ;i++ ){
+        //     System.out.print(array[i] + " ");
+        // }
+
+        System.out.println((int) Math.sqrt(4));
 
 
         
