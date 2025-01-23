@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "basics1",
+            "request": "launch",
+            "mainClass": "basics1",
+            "projectName": "DSA-IN-JAVA-notes-code-_f29b36b4"
+        },
+        {
+            "type": "java",
             "name": "basics",
             "request": "launch",
             "mainClass": "tries.basics",
