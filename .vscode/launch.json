@@ -6,6 +6,83 @@
     "configurations": [
         {
             "type": "java",
+            "name": "basics",
+            "request": "launch",
+            "mainClass": "tries.basics",
+            "projectName": "DSA-IN-JAVA-notes-code-_f29b36b4"
+        },
+        {
+            "type": "java",
+            "name": "pq",
+            "request": "launch",
+            "mainClass": "pq",
+            "projectName": "DSA-IN-JAVA-notes-code-_f29b36b4"
+        },
+        {
+            "type": "java",
+            "name": "basics",
+            "request": "launch",
+            "mainClass": "basics",
+            "projectName": "DSA-IN-JAVA-notes-code-_f29b36b4"
+        },
+        {
+            "type": "java",
+            "name": "basics",
+            "request": "launch",
+            "mainClass": "hashing.hashset.basics",
+            "projectName": "DSA-IN-JAVA-notes-code-_f29b36b4"
+        },
+        {
+            "type": "java",
+            "name": "basics",
+            "request": "launch",
+            "mainClass": "hashing.hashmap.basics",
+            "projectName": "DSA-IN-JAVA-notes-code-_f29b36b4"
+        },
+        {
+            "type": "java",
+            "name": "dectobi",
+            "request": "launch",
+            "mainClass": "functn.dectobi",
+            "projectName": "DSA-IN-JAVA-notes-code-_f29b36b4"
+        },
+        {
+            "type": "java",
+            "name": "Strings",
+            "request": "launch",
+            "mainClass": "strings.Strings",
+            "projectName": "DSA-IN-JAVA-notes-code-_f29b36b4"
+        },
+        {
+            "type": "java",
+            "name": "reversearray",
+            "request": "launch",
+            "mainClass": "arrays.reversearray",
+            "projectName": "DSA-IN-JAVA-notes-code-_f29b36b4"
+        },
+        {
+            "type": "java",
+            "name": "pp",
+            "request": "launch",
+            "mainClass": "arrays.pp",
+            "projectName": "DSA-IN-JAVA-notes-code-_f29b36b4"
+        },
+        {
+            "type": "java",
+            "name": "spiralprint",
+            "request": "launch",
+            "mainClass": "Array_2D.spiralprint",
+            "projectName": "DSA-IN-JAVA-notes-code-_f29b36b4"
+        },
+        {
+            "type": "java",
+            "name": "Creation",
+            "request": "launch",
+            "mainClass": "Array_2D.Creation",
+            "projectName": "DSA-IN-JAVA-notes-code-_f29b36b4"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
